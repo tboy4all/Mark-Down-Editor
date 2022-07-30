@@ -3,12 +3,17 @@ import './Header.scss'
 import { FaRegFile } from 'react-icons/fa'
 import { FiSave } from 'react-icons/fi'
 import { RiDeleteBinLine } from 'react-icons/ri'
+import { toggleSideBar } from './headerSlice'
+import { useAppDispatch, useAppSelector } from '../../app/hooks'
 
 const Header = () => {
+  // const showSideBar = useAppSelector((state) => state.header.showSideBar)
+  const dispatch = useAppDispatch()
+  // const toggleSideBar = useAppSelector((state) => state.header.showSideBar)
   return (
     <div className='header'>
       <div className='side'>
-        <div className='side-btn'>
+        <div className='side-btn' onClick={() => dispatch(toggleSideBar())}>
           <div className='bar1'></div>
           <div className='bar2'></div>
           <div className='bar3'></div>

@@ -1,4 +1,8 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import parser from '../../Utils/parser'
+
+// markdownText:action.payload,
+// processedText:parser(action.payload),
 
 type InitialState = {
   showSideBar: boolean
@@ -21,8 +25,15 @@ const headerSlice = createSlice({
     toggleSideBar: (state) => {
       state.showSideBar = !state.showSideBar
     },
+    toggleTheme: (state) => {
+      state.darkMode = !state.darkMode
+    },
+    markdownInput: (state, action: PayloadAction<string>) => {
+      state.markdownText = action.payload
+      state.processedText = parser(action.payload)
+    },
   },
 })
 
 export default headerSlice.reducer
-export const { toggleSideBar } = headerSlice.actions
+export const { toggleSideBar, toggleTheme, markdownInput } = headerSlice.actions

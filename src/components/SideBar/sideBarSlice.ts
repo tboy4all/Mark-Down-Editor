@@ -1,18 +1,22 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit'
 
-type InitialState = {
-  showSideBar: boolean
-}
+export type InitialStateType = Record<string, data>
+export type data = { markup: string[]; markdown: string[] }
+const initialState: InitialStateType = {}
 
-const initialState: InitialState = {
-  showSideBar: false,
-}
+// const initialState: InitialState = {
+//   darkMode: false,
+// }
 
 const sideBarSlice = createSlice({
-  name: 'openSide',
+  name: 'sidebar',
   initialState,
-  reducers: {},
+  reducers: {
+    createNewDoc: (state, action) => {
+      state[action.payload.key] = action.payload.data
+    },
+  },
 })
 
 export default sideBarSlice.reducer
-// export const { showSideBar } = sideBarSlice.actions
+export const { createNewDoc } = sideBarSlice.actions

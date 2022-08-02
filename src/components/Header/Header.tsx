@@ -4,7 +4,7 @@ import { FaRegFile } from 'react-icons/fa'
 import { FiSave } from 'react-icons/fi'
 import { RiDeleteBinLine } from 'react-icons/ri'
 import { toggleSideBar } from './headerSlice'
-import { useAppDispatch, useAppSelector } from '../../app/hooks'
+import { useAppDispatch } from '../../app/hooks'
 
 const Header = () => {
   // const showSideBar = useAppSelector((state) => state.header.showSideBar)

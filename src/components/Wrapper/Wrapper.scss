@@ -11,11 +11,11 @@
   color: var(--text-primary);
 }
 
-.col-tripple {
+.col-double {
   grid-template-columns: 1fr 6fr;
 }
 
-.col-double {
+.col-one {
   grid-template-columns: 1fr;
 }
 
@@ -48,6 +48,16 @@
   }
 }
 
+.dark {
+  background: #151619;
+  color: #c1c4cb;
+}
+
+.dark-1 {
+  background: #151619;
+  color: #c1c4cb;
+}
+
 .main-heading {
   background-color: $light-grey5;
   padding: 0.5rem 1rem;
@@ -78,4 +88,9 @@
 
 .hide {
   display: none;
+}
+
+.dark-heading {
+  background-color: $dark-grey1;
+  color: $white;
 }

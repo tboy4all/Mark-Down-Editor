@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit'
 import headerReducer from '../components/Header/headerSlice'
+import sidebarReducer from '../components/SideBar/sideBarSlice'
 
 const store = configureStore({
   reducer: {
     header: headerReducer,
+    sidebar: sidebarReducer,
   },
 })
 

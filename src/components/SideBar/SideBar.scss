@@ -8,7 +8,7 @@
   background-color: $dark-grey2;
   // // transform: translateX(-200px);
   // top: 0;
-  // transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
   padding: 1rem 0.7rem;
   // display: flex;
   // flex-direction: column;
@@ -23,7 +23,8 @@
   }
 }
 
-.hide {
+.show,
+.hidden {
   display: none;
   // transform: translateX(200px);
 }

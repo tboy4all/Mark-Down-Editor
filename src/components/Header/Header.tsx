@@ -1,15 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Header.scss'
 import { FaRegFile } from 'react-icons/fa'
 import { FiSave } from 'react-icons/fi'
 import { RiDeleteBinLine } from 'react-icons/ri'
 import { toggleSideBar } from './headerSlice'
 import { useAppDispatch } from '../../app/hooks'
+import DeleteModal from '../DeleteModal/DeleteModal'
 
 const Header = () => {
-  // const showSideBar = useAppSelector((state) => state.header.showSideBar)
+  const [deleteOpen, setDeleteOpen] = useState(false)
+
   const dispatch = useAppDispatch()
-  // const toggleSideBar = useAppSelector((state) => state.header.showSideBar)
+
+  // const deleteHandler = () => {
+  //   setDeleteOpen(true)
+  // }
+
   return (
     <div className='header'>
       <div className='side'>
@@ -35,7 +41,8 @@ const Header = () => {
           </div>
         </div>
         <div className='header-save'>
-          <span className='delete'>
+          <span className='delete' onClick={() => setDeleteOpen(!deleteOpen)}>
+            {deleteOpen && <DeleteModal setDeleteOpen={setDeleteOpen} />}
             <RiDeleteBinLine />
           </span>
           <div className='save-changes'>

@@ -10,18 +10,13 @@ import parser from 'html-react-parser'
 
 const Wrapper = () => {
   const showSideBar = useAppSelector((state) => state.header.showSideBar)
-  const theme = useAppSelector((state) => state.header.darkMode)
+  const themebar = useAppSelector((state) => state.header.darkMode)
   const dispatch = useAppDispatch()
   const [preview, setPreview] = React.useState<boolean>(false)
-  let markdown = useAppSelector((state) => state.header.processedText)
+  const markdown = useAppSelector((state) => state.header.processedText)
   const markdownTextContainer = React.useRef<HTMLDivElement>(null)
 
   const onChangeHandler = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    // dispatch({
-    //     type:'CHANGE INPUT',
-    //     payload:e.target.value
-    // })
-
     dispatch(markdownInput(e.target.value))
   }
 
@@ -31,23 +26,23 @@ const Wrapper = () => {
       <SideBar />
       <div className={`main`}>
         <div
-          className={`markdown-container ${theme ? 'dark' : ''} ${
+          className={`markdown-container ${themebar ? 'dark' : ''} ${
             preview === true ? 'hide' : ''
           }`}
         >
-          <div className={`main-heading ${theme ? 'dark-heading' : ''}`}>
+          <div className={`main-heading ${themebar ? 'dark-heading' : ''}`}>
             <span>MARKDOWN</span>
             <span onClick={() => setPreview(true)} className='preview-icon'>
               <FiEye />
             </span>
           </div>
           <textarea
-            className={`${theme ? 'dark' : ''}`}
+            className={`${themebar ? 'dark' : ''}`}
             onChange={onChangeHandler}
           />
         </div>
         <div className='preview'>
-          <div className={`main-heading ${theme ? 'dark-heading' : ''}`}>
+          <div className={`main-heading ${themebar ? 'dark-heading' : ''}`}>
             <span>PREVIEW</span>
             {preview ? (
               <span onClick={() => setPreview(false)}>
@@ -61,7 +56,7 @@ const Wrapper = () => {
           </div>
           <div
             ref={markdownTextContainer}
-            className={`preview-content ${theme ? 'dark-heading' : ''}`}
+            className={`preview-content ${themebar ? 'dark-heading' : ''}`}
           >
             {parser(markdown)}
           </div>

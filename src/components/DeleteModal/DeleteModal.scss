@@ -1,0 +1,73 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.modal-wrapper {
+  background-color: rgba($dark-grey1, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  // z-index: 5;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  outline: none;
+  display: flex;
+  align-items: center;
+  // justify-content: center;
+}
+
+.modal {
+  // z-index: 100;
+  background: $dark-grey4;
+  // position: relative;
+  margin: auto;
+  border-radius: 5px;
+  width: 25%;
+  max-width: 30%;
+  padding: 2rem;
+}
+.modal > *:not(:last-child) {
+  margin-bottom: 16px;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 26px;
+  color: $white;
+}
+
+.modal-text {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  color: $light-grey2;
+}
+
+.modal-btn {
+  background-color: $dark-orange;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 4px;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+}
+
+.modal-btn:hover {
+  background-color: $light-orange;
+}
+
+.hide {
+  display: none;
+}

@@ -6,10 +6,10 @@
   --text-primary: #e4e4e4;
 }
 
-[dark-theme='dark'] {
-  --background: #151619;
-  --text-primary: #c1c4cb;
-}
+// [dark-theme='dark'] {
+//   --background: #151619;
+//   --text-primary: #c1c4cb;
+// }
 
 * {
   margin: 0;
@@ -132,9 +132,9 @@ body {
   color: $dark-grey4;
 }
 
-.show {
-  transform: translateX(200px);
-}
+// .show {
+//   transform: translateX(200px);
+// }
 
 .blockquote {
   background-color: $dark-grey3;

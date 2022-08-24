@@ -23,20 +23,20 @@
     background: $white;
     margin: 6px 4px;
     width: 40px;
-    height: 6px;
+    height: 5px;
     transition: all 3s ease;
   }
 }
 
-// .bar1 {
-//   transform: rotate(-45deg) translate(-7px, 6px);
-// }
-// .bar2 {
-//   opacity: 0;
-// }
-// .bar3 {
-//   transform: rotate(45deg) translate(-7px, -8px);
-// }
+.change .bar1 {
+  transform: rotate(-45deg) translate(-7px, 6px);
+}
+.change .bar2 {
+  opacity: 0;
+}
+.change .bar3 {
+  transform: rotate(45deg) translate(-7px, -8px);
+}
 
 .header-nav {
   display: flex;
@@ -91,6 +91,10 @@
   display: flex;
   gap: 1rem;
   align-items: center;
+}
+
+.delete {
+  cursor: pointer;
 }
 
 .save-changes {

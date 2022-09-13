@@ -9,6 +9,7 @@ type InitialState = {
   darkMode: boolean
   markdownText: string
   processedText: string
+  currentDocName: string
 }
 
 const initialState: InitialState = {
@@ -16,6 +17,7 @@ const initialState: InitialState = {
   darkMode: true,
   markdownText: '',
   processedText: '',
+  currentDocName: '',
 }
 
 const headerSlice = createSlice({
@@ -32,8 +34,12 @@ const headerSlice = createSlice({
       state.markdownText = action.payload
       state.processedText = parser(action.payload)
     },
+    updateTab: (state, action) => {
+      state.currentDocName = action.payload
+    },
   },
 })
 
 export default headerSlice.reducer
-export const { toggleSideBar, toggleTheme, markdownInput } = headerSlice.actions
+export const { toggleSideBar, toggleTheme, markdownInput, updateTab } =
+  headerSlice.actions

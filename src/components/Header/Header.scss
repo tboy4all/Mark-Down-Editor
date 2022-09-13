@@ -3,13 +3,16 @@
 
 .header {
   display: flex;
-  height: 7.2rem;
+  height: 5rem;
   background-color: $dark-grey3;
   color: $white;
 }
 
 .side {
-  padding: 27px 21px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
   background-color: $dark-grey4;
   flex-basis: auto;
 }
@@ -22,7 +25,7 @@
   > div {
     background: $white;
     margin: 6px 4px;
-    width: 40px;
+    width: 38px;
     height: 5px;
     transition: all 3s ease;
   }

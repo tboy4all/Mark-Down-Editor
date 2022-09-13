@@ -154,3 +154,15 @@ body {
   width: 335px;
   word-wrap: break-word;
 }
+
+/* ============ MEDIA QUERY =============*/
+
+/*==================================*/
+/* BELOW 800px (Small Screens) */
+/* ================================== */
+
+@media (max-width: calc(800em / 16)) {
+  html {
+    font-size: 52.5%;
+  }
+}

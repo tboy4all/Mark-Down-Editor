@@ -1,6 +1,42 @@
 @import '../../styles/variables';
 @import '../../styles/mixins';
 
+.icon-centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.dark-box {
+  margin-right: 0.5rem;
+  height: 2.5rem;
+}
+
+.doc {
+  display: flex;
+  // justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.name-title {
+  font-weight: 400;
+  font-size: 0.8rem;
+  color: #7c8187;
+}
+
+.doc-name {
+  font-weight: 400;
+  font-size: 0.7rem;
+  color: #fff;
+}
+
+.doc-name:hover {
+  color: #f39765;
+}
+
 .sidebar {
   // position: fixed;
   // width: 200px;
@@ -37,6 +73,11 @@
   padding: 0.5rem 1rem;
   border-radius: 4px;
   margin-top: 0.5rem;
+  cursor: pointer;
+}
+
+.open-new:hover {
+  background-color: #f39765;
 }
 
 .theme {
@@ -78,4 +119,18 @@
 
 .white {
   color: $white;
+}
+
+.new-name {
+  position: fixed;
+  top: 12%;
+  left: 1%;
+  height: 2rem;
+  border-radius: 4px;
+  align-self: center;
+  width: 13%;
+}
+
+.doc-details {
+  font-size: 1rem;
 }

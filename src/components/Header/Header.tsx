@@ -4,16 +4,17 @@ import { FaRegFile } from 'react-icons/fa'
 import { FiSave } from 'react-icons/fi'
 import { RiDeleteBinLine } from 'react-icons/ri'
 import { toggleSideBar } from './headerSlice'
-import { useAppDispatch } from '../../app/hooks'
+import { useAppDispatch, useAppSelector } from '../../app/hooks'
 import DeleteModal from '../DeleteModal/DeleteModal'
 
 const Header = () => {
   const [deleteOpen, setDeleteOpen] = useState(false)
 
   const dispatch = useAppDispatch()
+  const currentDocName = useAppSelector((state) => state.header.currentDocName)
 
-  // const deleteHandler = () => {
-  //   setDeleteOpen(true)
+  // const handleDelete = (event: React.MouseEvent<HTMLDivElement>): void => {
+  //   dispatch(())
   // }
 
   return (
@@ -25,19 +26,23 @@ const Header = () => {
           <div className='bar3'></div>
         </div>
       </div>
+      {/* {currentDocName && ( */}
       <div className='header-nav'>
         <div className='header-nav-content'>
           <span className='header-nav__heading'>Markdown</span>
           <span>
             <FaRegFile />
           </span>
+
           <div className='header-nav__document'>
-            <label className='doc-name'>Document Name</label>
+            {/* <label className='doc-name'>Document Name</label>
             <input
               className='input-doc'
-              placeholder={'Untitled Document.md'}
+              placeholder={currentDocName}
               type='text'
-            />
+            /> */}
+            <p className='doc-name'>Document Name</p>
+            <p className='input-doc'>{currentDocName}.md</p>
           </div>
         </div>
         <div className='header-save'>
@@ -51,6 +56,7 @@ const Header = () => {
           </div>
         </div>
       </div>
+      {/* )} */}
     </div>
   )
 }
